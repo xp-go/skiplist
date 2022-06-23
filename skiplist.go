@@ -44,6 +44,10 @@ func (s *Skiplist) GetLevel() int {
 
 func (s *Skiplist) Add(num int) {
 
+	if isGet := s.Get(num); isGet {
+		return
+	}
+
 	// 获取新节点层级
 	level := s.GetLevel()
 
